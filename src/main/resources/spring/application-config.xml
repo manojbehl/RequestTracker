@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+    
+   <!-- Uncomment and add your base-package here:
+         <context:component-scan
+            base-package="com.picsaxis.sniffer.*"/>-->
+            
+            <bean id="dbDataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
+    			<property name="jndiName" value="java:comp/env/jdbc/RequestTracker"/>
+			</bean>
+            
+       <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver" />
+        
+        <!-- Use for Database connectivity with production env  -->
+        <property name="url" value="jdbc:mysql://localhost:3306/req_tracker?autoReconnect=true" />
+        <property name="username" value="trackerUser" />
+        <property name="password" value="Tr@ck1ngUser" /> 
+		<property name="initialSize" value="20"></property>
+		<property name="minIdle" value="10"></property>
+        <property name="maxIdle" value="20"></property>
+        <property name="maxOpenPreparedStatements" value="100"></property>    
+        
+        <!-- Use for Database connectivity at www.retera.in -->
+        
+       <!--  <property name="url" value="jdbc:mysql://localhost:3306/requesttracker" />
+        <property name="username" value="workorder" />
+        <property name="password" value="Work0rder" /> -->
+        
+        <!-- Use for central Database connectivity at Picsaxis -->
+    
+        <!-- <property name="url" value="jdbc:mysql://192.168.0.5:3306/requesttracker" />
+        <property name="username" value="root" />
+        <property name="password" value="mysql" />  
+        <property name="initialSize" value="20"></property>
+		<property name="minIdle" value="10"></property>
+        <property name="maxIdle" value="20"></property>
+        <property name="maxOpenPreparedStatements" value="100"></property>    
+                 -->
+    
+    <!-- Use for Database connectivity at Local System -->
+ 
+          <!-- <property name="url" value="jdbc:mysql://localhost:3306/requesttracker" />
+         <property name="username" value="root" />
+        <property name="password" value="mysql" />  -->
+         
+         
+       <!--  <property name="url" value="jdbc:mysql://localhost:3306/prequesttracker" />
+         <property name="username" value="root" />
+        <property name="password" value="mysql" />  --> 
+         
+         
+         
+    </bean>
+
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource" ref="dbDataSource"></property>
+        
+    </bean>
+
+</beans>
