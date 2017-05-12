@@ -26,9 +26,11 @@
             <div class="row">
                 <div class="col-md-12">
                  
-                    <strong>Email: </strong>support@picsaxis.com
+                    <strong>Email: </strong>adops@claymotion.in
                     &nbsp;&nbsp;
-                    <strong>Support: </strong>+91 9717477123
+                    <strong>Support: </strong>+919818900229
+                    &nbsp;&nbsp;
+                    <strong>Copyright: </strong>http://claymotion.in
                 </div>
 
             </div>
@@ -173,7 +175,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    &copy; | By : <a href="http://www.picsaxis.com" target="_blank">Claymotion</a>
+                    &copy; | By : <a href="http://claymotion.in" target="_blank">Claymotion</a>
                 </div>
 
             </div>
